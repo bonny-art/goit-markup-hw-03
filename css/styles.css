@@ -78,6 +78,11 @@ img {
   cursor: pointer;
 }
 
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .container {
   width: 1158px;
   padding: 0 15px;
@@ -294,8 +299,6 @@ img {
 
 .team {
   background-color: var(--cloud-color);
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
 .team-title {
