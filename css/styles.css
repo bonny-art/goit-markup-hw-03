@@ -139,14 +139,14 @@ img {
 }
 
 .header-nav-list {
-  padding: 24px 0;
   display: flex;
   gap: 40px;
   align-items: center;
 }
 
-/* .header-nav-item {
-} */
+.header-nav-item {
+  padding: 24px 0;
+}
 
 .header-nav-link {
   font-weight: 500;
