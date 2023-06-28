@@ -1,46 +1,43 @@
 :root {
-  /* Primary brand */
+  /* Font */
+  --primary-font: 'Roboto', sans-serif;
+
+  /* Colors */
   --iris-color: #4d5ae5;
-  /* Pressed state */
   --ocean-color: #404bbf;
-  /* Dark */
   --navy-blue-color: #2e2f42;
-  /* Success */
   --green-color: #31d0aa;
-  /* Text */
   --slate-color: #434455;
-  /* Subtle text */
   --light-slate-color: #8e8f99;
-  /* Accent */
   --cornflower-color: #e7e9fc;
-  /* Light */
   --cloud-color: #f4f4fd;
-  /* Modal overlay */
   --navy-blue-modal-color: #2e2f4266;
-  /* Hero background */
   --gray-color: #2e2f42b2;
-  /* Whote background */
   --white-color: #ffffff;
-  /* Nodal background */
   --dairy-color: #fcfcfc;
-  /* --main-font-size: 16px; */
-  --main-line-height: 1.5;
+
+  /* Card set parameters */
+  --items: 2;
+  --indent: 20px;
+
+  /* Others */
 }
 
 /**
   |============================
-  | General
+  | Common styles
   |============================
 */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--primary-font);
   background-color: var(--white-color);
   color: var(--slate-color);
-  /* font-size: var(--main-font-size); */
-  line-height: var(--main-line-height);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
+/* Reset */
 h1,
 h2,
 h3,
@@ -48,8 +45,7 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 address {
@@ -58,13 +54,14 @@ address {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .list {
   list-style: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
@@ -74,10 +71,11 @@ img {
 
 .button {
   font-family: inherit;
-  line-height: var(--main-line-height);
+  line-height: inherit;
   cursor: pointer;
 }
 
+/* Base styles */
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -100,6 +98,21 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/**
+  |============================
+  | Card set
+  |============================
+*/
+
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+.card-set-item {
+  width: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
 /**
@@ -231,8 +244,6 @@ img {
 */
 
 .advantages {
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
 /* .advantages-container {
@@ -242,12 +253,11 @@ img {
 } */
 
 .advantages-list {
-  display: flex;
-  gap: 24px;
+  --indent: 24px;
 }
 
 .advantages-item {
-  width: 264px;
+  --items: 4;
 }
 
 .advantages-item-title {
@@ -270,7 +280,7 @@ img {
 */
 
 .selection {
-  padding-bottom: 120px;
+  padding-top: 0;
 }
 
 .selection-title {
@@ -284,12 +294,12 @@ img {
 }
 
 .selection-list {
-  display: flex;
-  gap: 24px;
+  --indent: 24px;
 }
 
-/* .selection-item {
-} */
+.selection-item {
+  --items: 3;
+}
 
 /* .selection-img {
 } */
@@ -318,11 +328,11 @@ img {
 }
 
 .team-list {
-  display: flex;
-  gap: 24px;
+  --indent: 24px;
 }
 
 .team-item {
+  --items: 4;
   background-color: var(--white-color);
   border-radius: 0 0 4px 4px;
 }
@@ -418,7 +428,7 @@ img {
   border: 1px solid var(--cornflower-color);
   border-radius: 4px;
   display: block;
-  padding: 12px 24px;
+  padding: 11px 24px;
 }
 
 .filter-button:hover,
@@ -435,14 +445,13 @@ img {
 */
 
 .portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
   row-gap: 48px;
-  column-gap: 24px;
+  --indent: 24px;
   /* justify-content: space-between; */
 }
 
 .portfolio-item {
+  --items: 3;
 }
 
 .portfolio-img {
