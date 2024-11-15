@@ -14,6 +14,12 @@
   --cl-white: rgb(255, 255, 255);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 
@@ -23,7 +29,7 @@ body {
 
 button {
   cursor: pointer;
-  /* border: none; */
+  border: none;
 }
 
 a {
@@ -40,9 +46,25 @@ address {
   font-style: normal;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* #endregion */
 
 /* #region Common */
+
+.section {
+  padding: 120px 0;
+}
+
+.container {
+  width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
 .title {
   text-align: center;
@@ -56,6 +78,8 @@ address {
 }
 
 .logo {
+  display: inline-block;
+
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -80,7 +104,7 @@ address {
   line-height: 1.5;
   letter-spacing: 0.04em;
 
-  color: var(--WHITE, #fff);
+  color: var(--cl-white);
 }
 
 .btn:hover,
@@ -93,18 +117,25 @@ address {
 /* #region Layout: Header */
 
 .header {
+  padding: 24px 0;
 }
 
 .header-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-nav {
+  display: flex;
+  gap: 76px;
 }
 
 .header-logo {
 }
 
 .header-nav-list {
+  display: flex;
+  gap: 40px;
 }
 
 .header-nav-item {
@@ -127,6 +158,8 @@ address {
 }
 
 .header-adress-list {
+  display: flex;
+  gap: 40px;
 }
 
 .header-adress-item {
@@ -150,12 +183,19 @@ address {
 
 .hero {
   background: var(--cl-navy-blue);
+  padding: 188px 0;
 }
 
 .hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
 }
 
 .hero-title {
+  width: 496px;
+
   text-align: center;
 
   font-size: 56px;
@@ -166,6 +206,7 @@ address {
 }
 
 .hero-btn {
+  padding: 16px 32px;
 }
 
 /* #endregion */
@@ -182,9 +223,15 @@ address {
 }
 
 .values-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .values-item {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .values-item-title {
@@ -210,19 +257,42 @@ address {
 }
 
 .team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
 }
 
 .team-title {
 }
 
 .team-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .team-item {
+  display: flex;
+  flex-direction: column;
+
+  width: 264px;
+  border-radius: 4px;
+  overflow: hidden;
+
   background-color: var(--cl-white);
+
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-item-img {
+}
+
+.team-item-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 32px;
 }
 
 .team-item-name {
@@ -251,18 +321,36 @@ address {
 }
 
 .portfolio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
 }
 
 .portfolio-title {
 }
 
 .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
 }
 
 .portfolio-item {
+  width: 360px;
 }
 
 .portfolio-image {
+}
+
+.portfolio-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 32px 16px;
+
+  border: 1px solid var(--cl-cornflower);
+  border-top: none;
 }
 
 .portfolio-subtitle {
@@ -274,7 +362,7 @@ address {
   color: var(--cl-navy-blue);
 }
 
-.portfolio-caption {
+.portfolio-desc {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -284,6 +372,8 @@ address {
 /* #region Layout: Footer */
 
 .footer {
+  padding: 100px 0;
+
   background: var(--cl-navy-blue);
 }
 
@@ -291,9 +381,12 @@ address {
 }
 
 .footer-logo {
+  margin-bottom: 16px;
 }
 
 .footer-desc {
+  width: 264px;
+
   line-height: 1.5;
   letter-spacing: 0.02em;
 
