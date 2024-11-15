@@ -33,6 +33,7 @@ button {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   color: inherit;
 }
@@ -56,6 +57,19 @@ img {
 
 /* #region Common */
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
 .section {
   padding: 120px 0;
 }
@@ -67,6 +81,9 @@ img {
 }
 
 .title {
+  max-width: 496px;
+  margin-bottom: 72px;
+
   text-align: center;
   text-transform: capitalize;
 
@@ -98,13 +115,16 @@ img {
 }
 
 .btn {
-  background: var(--cl-iris);
+  min-width: 169px;
+  border-radius: 4px;
 
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
 
   color: var(--cl-white);
+
+  background: var(--cl-iris);
 }
 
 .btn:hover,
@@ -117,7 +137,7 @@ img {
 /* #region Layout: Header */
 
 .header {
-  padding: 24px 0;
+  border-bottom: 1px solid var(--cl-cornflower);
 }
 
 .header-container {
@@ -127,10 +147,11 @@ img {
 
 .header-nav {
   display: flex;
-  gap: 76px;
+  align-items: center;
 }
 
 .header-logo {
+  margin-right: 76px;
 }
 
 .header-nav-list {
@@ -142,6 +163,8 @@ img {
 }
 
 .header-nav-link {
+  padding: 24px 0;
+
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -166,6 +189,8 @@ img {
 }
 
 .header-adress-link {
+  padding: 24px 0;
+
   line-height: 1.5;
   letter-spacing: 0.02em;
 
@@ -225,16 +250,18 @@ img {
 .values-list {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .values-item {
-  width: 264px;
+  width: calc((100% - 72px) / 4);
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 .values-item-title {
+  margin-bottom: 8px;
+
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -257,9 +284,6 @@ img {
 }
 
 .team-container {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
 }
 
 .team-title {
@@ -268,15 +292,15 @@ img {
 .team-list {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .team-item {
   display: flex;
   flex-direction: column;
 
-  width: 264px;
-  border-radius: 4px;
-  overflow: hidden;
+  width: calc((100% - 72px) / 4);
+  border-radius: 0 4px 4px 0;
 
   background-color: var(--cl-white);
 
@@ -291,11 +315,13 @@ img {
 .team-item-caption {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px 32px;
+
+  padding: 32px 16px;
 }
 
 .team-item-name {
+  margin-bottom: 8px;
+
   text-align: center;
 
   font-size: 20px;
@@ -321,9 +347,6 @@ img {
 }
 
 .portfolio-container {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
 }
 
 .portfolio-title {
@@ -345,7 +368,6 @@ img {
 .portfolio-caption {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
   padding: 32px 16px;
 
@@ -354,6 +376,8 @@ img {
 }
 
 .portfolio-subtitle {
+  margin-bottom: 8px;
+
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
